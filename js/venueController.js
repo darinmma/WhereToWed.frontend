@@ -1,15 +1,24 @@
-// When only the name of the module is passed in,
-// the 'module' method returns the specified module.
 (function() {
   'use strict';
 
+  VenueController.$inject = ['$http']
 
   angular.module('WhereToWed')
     .controller('VenueController', VenueController);
 
-  function VenueController() {
+  function VenueController($http) {
     var vm = this
-    vm.venues = //ajax call to api/venues?
+    vm.all = []
+
+    function getVenues(){
+      $http
+        .get('http://localhost:3000/api/venues')
+        .then(function(response){
+          self.all=response.data.venue
+        })
+    }
+
+    getVenues()
   }
 
 }());
