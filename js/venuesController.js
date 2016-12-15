@@ -1,12 +1,12 @@
 (function() {
   'use strict';
 
-  VenueController.$inject = ['$http']
-
   angular.module('WhereToWed')
-    .controller('VenueController', VenueController);
+    .controller('VenuesController', VenuesController);
 
-  function VenueController($http) {
+  VenuesController.$inject = ['$http']
+
+  function VenuesController($http) {
     var vm = this
     vm.all = []
 
@@ -14,11 +14,14 @@
       $http
         .get('http://localhost:3000/api/venues')
         .then(function(response){
-          self.all=response.data.venue
+          vm.all=response.data
+          console.log(response)
+          console.log(vm.all)
         })
     }
 
     getVenues()
+
   }
 
 }());
