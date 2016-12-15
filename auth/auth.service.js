@@ -24,7 +24,7 @@
     function logIn(data) {
       var promise = $http({
         method: 'POST',
-        url:    'https://wheretowed.herokuapp.com/api/token',
+        url:    'http://localhost:3000/api/token',
         data:   data
       })
       .then(
