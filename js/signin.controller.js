@@ -40,12 +40,13 @@
             // on error
             function(err) {
               if (err.status === 409) vm.conflict = true;
-              $log.info('Error Claire-r:', err);
+              $log.info('Log In Error', err);
             }
           );
       }
 
       function submitLogIn() {
+        console.log('click')
         authService
           .logIn(vm.logIn)
           .then(
