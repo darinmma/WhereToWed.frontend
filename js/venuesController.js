@@ -12,7 +12,7 @@
 
     function getVenues(){
       $http
-        .get('http://localhost:3000/api/venues')
+        .get('https://wheretowed.herokuapp.com/api/venues')
         .then(function(response){
           vm.all=response.data
           console.log(response)
