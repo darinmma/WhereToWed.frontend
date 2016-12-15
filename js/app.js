@@ -10,15 +10,17 @@
 
     $stateProvider
     //user homepage after login
-    // .state('userhome', {
-    //   url: '/home',
-    //   templateUrl: 'user.html',
-    //   controller: ''
-    // })
+    .state('home', {
+      url: '/home',
+      templateUrl: 'home.html',
+      controller: 'SignInController',
+      controllerAs: 'signInVm'
+
+    })
       //build a column sortable list of all venues
     .state('index', {
       url: '/',
-      templateUrl: 'index.html',
+      templateUrl: '.html',
       controller: 'VenuesController',
       controllerAs: 'venuesVm'
     })
