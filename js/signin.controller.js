@@ -10,17 +10,9 @@
     function SignInController($log, authService, userService, $state) {
       var vm = this;
 
-      vm.signUp = {
-        email: "email",
-        name: "name",
-        password: "password",
-        passwordConfirmation: "password"
-      };
+      vm.signUp = {};
       vm.submitSignUp = submitSignUp;
-      vm.logIn = {
-        email:    "email",
-        password: "password"
-      };
+      vm.logIn = {};
       vm.submitLogIn = submitLogIn;
       vm.conflict = false;
 
@@ -46,7 +38,7 @@
       }
 
       function submitLogIn() {
-        console.log('click')
+        console.log()
         authService
           .logIn(vm.logIn)
           .then(
