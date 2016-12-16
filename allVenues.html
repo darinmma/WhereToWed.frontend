@@ -1,5 +1,26 @@
-<ul>
-  <li ng-repeat="venue in venuesVm.all">
-    <strong>{{venue.name}}</strong> | {{venue.location.street}}, {{venue.location.city}}, {{venue.location.state}}, {{venue.location.zipCode}}
-  </li>
-</ul>
+
+<div class="col-xs-12">
+  <label>Search</label>
+  <input type="search" class="form-control" ng-model="venueVm.search" placeholder="search...">
+</div>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th ng-click="venueVm.sortBy = 'name'; venueVm.reverse = !venueVm.reverse">Name</th>
+        <th ng-click="venueVm.sortBy = 'city'; venueVm.reverse = !venueVm.reverse">City</th>
+        <th ng-click="venueVm.sortBy = 'maxPrice'; venueVm.reverse = !venueVm.reverse">Price Range</th>
+        <th ng-click="venueVm.sortBy = 'maxOccupancy'; venueVm.reverse = !venueVm.reverse">Occupancy</th>
+        <th class="text-right" ng-click="venueVm.sortBy = 'outsideVendor'; venueVm.reverse = !venueVm.reverse"> Allows Outside Vendors?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="venue in venuesVm.all | filter: venueVm.search | orderBy:venueVm.sortBy:venueVm.reverse">
+        <td>{{venue.name}}</td>
+        <td>{{venue.location.city | uppercase}}</td>
+        <td>{{venue.minPrice}} - {{venue.maxPrice}}</td>
+        <td>{{venue.minOccupancy}} - {{venue.maxOccupancy}}</td>
+        <td class="text-right">{{venue.outsideVendor}}</td>
+      </tr>
+    </tbody>
+  </table>

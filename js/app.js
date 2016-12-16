@@ -15,15 +15,8 @@
       templateUrl: 'home.html',
       controller: 'SignInController',
       controllerAs: 'signInVm'
-
     })
       //build a column sortable list of all venues
-    .state('index', {
-      url: '/',
-      templateUrl: '.html',
-      controller: 'VenuesController',
-      controllerAs: 'venuesVm'
-    })
     .state('venues', {
       url: '/venues',
       templateUrl: 'allVenues.html',

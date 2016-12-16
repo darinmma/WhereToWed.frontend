@@ -15,6 +15,7 @@
       vm.logIn = {};
       vm.submitLogIn = submitLogIn;
       vm.conflict = false;
+      vm.user = vm.logIn.email;
 
       // FUNCTIONS
       function submitSignUp() {
@@ -27,7 +28,7 @@
             // on success
             function(decodedToken) {
               $log.info('Logged in!', decodedToken);
-              $state.go('index');
+              $state.go('home');
             },
             // on error
             function(err) {
@@ -45,7 +46,8 @@
             // on success
             function(decodedToken) {
               $log.info('Logged in!', decodedToken);
-              $state.go('index');
+              $state.go('home');
+              console.log(vm.logIn.email)
             },
             // on error
             function(err) {

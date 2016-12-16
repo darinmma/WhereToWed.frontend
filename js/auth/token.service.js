@@ -10,7 +10,7 @@
   function tokenService($log, $window) {
     $log.info("token service loaded!");
 
-    var TOKEN_KEY = 'criminals_jwt';
+    var TOKEN_KEY = 'wheretowed_jwt';
     var service = {
       store:    store,
       retrieve: retrieve,

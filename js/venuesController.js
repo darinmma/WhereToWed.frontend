@@ -9,6 +9,7 @@
   function VenuesController($http) {
     var vm = this
     vm.all = []
+    vm.reverse = true
 
     function getVenues(){
       $http
