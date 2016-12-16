@@ -18,7 +18,7 @@
       <tr ng-repeat="venue in venuesVm.all | filter: venueVm.search | orderBy:venueVm.sortBy:venueVm.reverse">
         <td>{{venue.name}}</td>
         <td>{{venue.location.city | uppercase}}</td>
-        <td>{{venue.minPrice}} - {{venue.maxPrice}}</td>
+        <td>${{venue.minPrice}} - ${{venue.maxPrice}}</td>
         <td>{{venue.minOccupancy}} - {{venue.maxOccupancy}}</td>
         <td class="text-right">{{venue.outsideVendor}}</td>
       </tr>

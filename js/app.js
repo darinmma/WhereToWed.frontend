@@ -9,10 +9,15 @@
     $urlRouterProvider.otherwise('/');
 
     $stateProvider
-    //user homepage after login
+    //home
     .state('home', {
       url: '/home',
-      templateUrl: 'home.html',
+      templateUrl: 'home.html'
+    })
+    //user homepage after login
+    .state('user', {
+      url: '/user',
+      templateUrl: 'user.html',
       controller: 'SignInController',
       controllerAs: 'signInVm'
     })
